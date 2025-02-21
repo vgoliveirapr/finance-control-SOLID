@@ -1,2 +1,2 @@
-# finance-control-SOLID
-An api to control the finances of a family using design pattern SOLID with fabric
+# Finance Control - SOLID
+This is an api using .Net WebApi with the design pattern SOLID with fabric to finantial control.
