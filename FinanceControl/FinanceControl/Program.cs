@@ -1,5 +1,6 @@
 using FinanceControl.Application.Factories;
 using FinanceControl.Application.Services;
+using FinanceControl.Infraestructure.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //services created for finantial transaction use
+builder.Services.AddSingleton<ITransactionRepository, TransactionRepository>();
+builder.Services.AddScoped<DataRepositoryService>();
 builder.Services.AddScoped<TransactionCreditService>();
 builder.Services.AddScoped<TransactionDebitService>();
 builder.Services.AddScoped<TransactionServiceFactory>();
