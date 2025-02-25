@@ -28,5 +28,11 @@ namespace FinanceControl.API.Controllers
             await Service.AddNewTransaction(transacao);
             return Ok("Finantial transaction saved successfully");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAllTransactions([FromServices] DataRepositoryService repositoryData)
+        {
+            return Ok(await repositoryData.GetAllTransactions());
+        }
     }
 }

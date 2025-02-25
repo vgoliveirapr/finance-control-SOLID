@@ -1,22 +1,28 @@
 ﻿using FinanceControl.Domain.DTOs;
 using FinanceControl.Domain.Entities;
+using FinanceControl.Infraestructure.Repository;
 
 namespace FinanceControl.Application.Services
 {
     public class TransactionCreditService : ITransactionService
     {
-        private readonly List<Transaction> Data = new();
+        private readonly ITransactionRepository repositoryData;
+
+        public TransactionCreditService(ITransactionRepository repository)
+        {
+            repositoryData = repository;
+        }
 
         /// <summary>
         /// Add the financial transaction to database
         /// </summary>
         /// <param name="transaction">Financial transaction with the value, category and type</param>
-        /// <returns>Future implementation</returns>
+        /// <returns>Returns Task Completed always, need to be improved</returns>
         public async Task AddNewTransaction(TransactionDTO transaction)
         {
             Transaction financialTransaction = new(transaction.Type, transaction.Value, transaction.Category);
 
-            Data.Add(financialTransaction);
+            await repositoryData.AddTransaction(financialTransaction);
         }
     }
 }
