@@ -25,6 +25,6 @@ Route: /api/transactions
 ```
 
 ## Future Implementations
-Credit Cards Transactions - You need to register this transactions apart.
-Users - Create, Read, update and delete.
-Transactions separated by users - You can register all the transacations for differents users.
+Credit Cards Transactions - You need to register this transactions apart. <br/>
+Users - Create, Read, update and delete. <br/>
+Transactions separated by users - You can register all the transactions for differents users.
