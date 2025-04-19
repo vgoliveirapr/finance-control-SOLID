@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceControl.API", "FinanceControl\FinanceControl.API.csproj", "{467742B3-F3EA-4B1C-A8D8-3D2B28021AAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceControl.API", "FinanceControl.API\FinanceControl.API.csproj", "{467742B3-F3EA-4B1C-A8D8-3D2B28021AAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceControl.Application", "FinanceControl.Application\FinanceControl.Application.csproj", "{931F3416-255B-4315-90CD-4F1F952AC256}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceControl.Application", "FinanceControl.Application\FinanceControl.Application.csproj", "{931F3416-255B-4315-90CD-4F1F952AC256}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceControl.Domain", "FinanceControl.Domain\FinanceControl.Domain.csproj", "{DCD7D706-9938-4053-8445-531D3FF25C06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceControl.Domain", "FinanceControl.Domain\FinanceControl.Domain.csproj", "{DCD7D706-9938-4053-8445-531D3FF25C06}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinanceControl.Infraestructure", "FinanceControl.Infraestructure\FinanceControl.Infraestructure.csproj", "{DAE31400-3C0B-4490-85BE-D1ADE4E8FD74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinanceControl.Infrastructure", "FinanceControl.Infrastructure\FinanceControl.Infrastructure.csproj", "{DAE31400-3C0B-4490-85BE-D1ADE4E8FD74}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
