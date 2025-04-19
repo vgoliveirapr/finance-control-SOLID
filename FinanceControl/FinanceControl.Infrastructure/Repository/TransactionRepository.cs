@@ -1,6 +1,7 @@
 ﻿using FinanceControl.Domain.DTOs;
 using FinanceControl.Domain.Entities;
 using FinanceControl.Infrastructure.Context;
+using FinanceControl.Infrastructure.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace FinanceControl.Infrastructure.Repository

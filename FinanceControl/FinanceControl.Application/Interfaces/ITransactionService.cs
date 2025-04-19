@@ -1,6 +1,6 @@
 ﻿using FinanceControl.Domain.DTOs;
 
-namespace FinanceControl.Application.Services
+namespace FinanceControl.Application.Interfaces
 {
     public interface ITransactionService
     {

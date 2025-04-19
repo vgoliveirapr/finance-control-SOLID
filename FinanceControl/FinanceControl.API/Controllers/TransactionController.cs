@@ -1,4 +1,5 @@
 ﻿using FinanceControl.Application.Factories;
+using FinanceControl.Application.Interfaces;
 using FinanceControl.Application.Services;
 using FinanceControl.Domain.DTOs;
 using Microsoft.AspNetCore.Mvc;
@@ -17,7 +18,7 @@ namespace FinanceControl.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AdicionarTransacao([FromBody] TransactionDTO transacao)
+        public async Task<IActionResult> AddTransaction([FromBody] TransactionDTO transacao)
         {
             if (!ModelState.IsValid)
             {

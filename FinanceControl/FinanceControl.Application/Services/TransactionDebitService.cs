@@ -1,6 +1,7 @@
-﻿using FinanceControl.Domain.DTOs;
+﻿using FinanceControl.Application.Interfaces;
+using FinanceControl.Domain.DTOs;
 using FinanceControl.Domain.Entities;
-using FinanceControl.Infrastructure.Repository;
+using FinanceControl.Infrastructure.Interfaces;
 
 namespace FinanceControl.Application.Services
 {

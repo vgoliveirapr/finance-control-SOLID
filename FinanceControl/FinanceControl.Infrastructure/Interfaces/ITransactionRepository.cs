@@ -1,7 +1,7 @@
 ﻿using FinanceControl.Domain.DTOs;
 using FinanceControl.Domain.Entities;
 
-namespace FinanceControl.Infrastructure.Repository
+namespace FinanceControl.Infrastructure.Interfaces
 {
     public interface ITransactionRepository
     {
