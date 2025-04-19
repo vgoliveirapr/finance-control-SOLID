@@ -3,9 +3,9 @@ API with focus to control the financial transaction of a family.
 
 ## Design pattern used
  - SOLID;
- - Fabric.
+ - Factory.
 
-## Version 0.01.0
+## Version 0.02.0
 
 ## Funcionality
 Can you use the route /api/transactions to register the transaction with some validations to save only data that's in the allowed format.
@@ -25,4 +25,6 @@ Route: /api/transactions
 ```
 
 ## Future Implementations
-A database with the transaction because today is only in the local variable.
+Credit Cards Transactions - You need to register this transactions apart.
+Users - Create, Read, update and delete.
+Transactions separated by users - You can register all the transacations for differents users.
