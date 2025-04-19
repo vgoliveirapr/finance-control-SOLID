@@ -1,13 +1,18 @@
 ﻿using FinanceControl.Domain.DTOs;
 using FinanceControl.Domain.Entities;
+using FinanceControl.Infrastructure.Context;
+using Microsoft.EntityFrameworkCore;
 
-namespace FinanceControl.Infraestructure.Repository
+namespace FinanceControl.Infrastructure.Repository
 {
     public class TransactionRepository : ITransactionRepository
     {
-        private List<Transaction> Data = new();
+        private readonly FinanceControlDbContext database;
 
-        public TransactionRepository() { }
+        public TransactionRepository(FinanceControlDbContext databaseContext) 
+        {
+            database = databaseContext;
+        }
 
         /// <summary>
         /// Future implementation
@@ -15,8 +20,8 @@ namespace FinanceControl.Infraestructure.Repository
         /// <param name="transaction">Future implementation</param>
         public async Task AddTransaction(Transaction transaction)
         {
-            Data.Add(transaction);
-            await Task.CompletedTask;
+            await database.Transactions.AddAsync(transaction);
+            await database.SaveChangesAsync();
         }
 
         /// <summary>
@@ -25,7 +30,7 @@ namespace FinanceControl.Infraestructure.Repository
         /// <returns>A list of all the transactions registered in the local variable</returns>
         public async Task<List<TransactionDTO>> GetAllTransactions()
         {
-            List<TransactionDTO> data = Data.Select(transaction => new TransactionDTO(transaction.Type, transaction.Value, transaction.Category)).ToList();
+            List<TransactionDTO> data = await database.Transactions.Select(transaction => new TransactionDTO(transaction.Type, transaction.Value, transaction.Category)).ToListAsync();
 
             return await Task.FromResult(data);
         }
