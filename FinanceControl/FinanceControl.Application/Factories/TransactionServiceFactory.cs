@@ -1,10 +1,6 @@
-﻿using FinanceControl.Application.Services;
+﻿using FinanceControl.Application.Interfaces;
+using FinanceControl.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FinanceControl.Application.Factories
 {
@@ -21,7 +17,7 @@ namespace FinanceControl.Application.Factories
             => typeFinancialTransaction.ToLower() switch
             {
                 "c" => serviceProvider.GetRequiredService<TransactionCreditService>(),
-                "d" => serviceProvider.GetRequiredService<TransactionCreditService>(),
+                "d" => serviceProvider.GetRequiredService<TransactionDebitService>(),
                 _ => throw new ArgumentException("Financial transaction informed is not allowed")
             };
     }

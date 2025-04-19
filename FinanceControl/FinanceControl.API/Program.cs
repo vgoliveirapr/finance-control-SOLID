@@ -1,8 +1,7 @@
-using FinanceControl.Application.Factories;
-using FinanceControl.Application.Services;
 using FinanceControl.Infrastructure.Context;
-using FinanceControl.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
+using FinanceControl.API.Application;
+using FinanceControl.API.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,11 +19,9 @@ builder.Services.AddDbContext<FinanceControlDbContext>(options =>
     new MySqlServerVersion(new Version(11, 7, 2))));
 
 //services created for finantial transaction use
-builder.Services.AddScoped<ITransactionRepository, TransactionRepository>();
-builder.Services.AddScoped<DataRepositoryService>();
-builder.Services.AddScoped<TransactionCreditService>();
-builder.Services.AddScoped<TransactionDebitService>();
-builder.Services.AddScoped<TransactionServiceFactory>();
+builder.Services.AddApplicationServices();
+builder.Services.AddInfrastructureServices();
+
 
 var app = builder.Build();
 

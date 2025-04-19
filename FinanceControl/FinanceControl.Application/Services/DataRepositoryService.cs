@@ -1,6 +1,5 @@
 ﻿using FinanceControl.Domain.DTOs;
-using FinanceControl.Domain.Entities;
-using FinanceControl.Infrastructure.Repository;
+using FinanceControl.Infrastructure.Interfaces;
 
 namespace FinanceControl.Application.Services
 {

@@ -13,7 +13,7 @@ namespace FinanceControl.Infrastructure.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configuração de validações e tipos
+            // All the configurations for the Transaction entity
             modelBuilder.Entity<Transaction>(t =>
             {
                 t.ToTable("Transactions");
