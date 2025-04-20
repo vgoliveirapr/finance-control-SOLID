@@ -1,4 +1,5 @@
 ﻿using FinanceControl.Application.Factories;
+using FinanceControl.Application.Interfaces;
 using FinanceControl.Application.Services;
 
 namespace FinanceControl.API.Application
@@ -11,6 +12,8 @@ namespace FinanceControl.API.Application
             services.AddScoped<TransactionCreditService>();
             services.AddScoped<TransactionDebitService>();
             services.AddScoped<TransactionServiceFactory>();
+            services.AddScoped<IJwtService,JwtService>();
+            services.AddScoped<UserService>();
 
             return services;
         }

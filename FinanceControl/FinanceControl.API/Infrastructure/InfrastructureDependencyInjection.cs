@@ -8,6 +8,9 @@ namespace FinanceControl.API.Infrastructure
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
         {
             services.AddScoped<ITransactionRepository, TransactionRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserTokenRepository, UserTokenRepository>();
+
             return services;
         }
     }

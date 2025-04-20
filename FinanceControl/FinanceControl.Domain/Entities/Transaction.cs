@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace FinanceControl.Domain.Entities
+﻿namespace FinanceControl.Domain.Entities
 {
     public class Transaction
     {
@@ -33,11 +31,12 @@ namespace FinanceControl.Domain.Entities
 
         public Transaction(char type, decimal value, string category)
         {
+            DateTime now = DateTime.Now;
             ID = Guid.NewGuid();
             Type = type;
             Value = value;
             Category = category;
-            RegistrationDate = DateTime.Now;
+            RegistrationDate = now.AddMilliseconds(-now.Millisecond);
         }
     }
 }

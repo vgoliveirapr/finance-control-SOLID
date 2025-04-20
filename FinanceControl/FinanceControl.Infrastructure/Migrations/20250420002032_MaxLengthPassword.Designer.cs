@@ -4,6 +4,7 @@ using FinanceControl.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinanceControl.Infrastructure.Migrations
 {
     [DbContext(typeof(FinanceControlDbContext))]
-    partial class FinanceControlDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250420002032_MaxLengthPassword")]
+    partial class MaxLengthPassword
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,7 +34,7 @@ namespace FinanceControl.Infrastructure.Migrations
                     b.Property<string>("Category")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar");
+                        .HasColumnType("varchar(50)");
 
                     b.Property<DateTime>("RegistrationDate")
                         .HasColumnType("timestamp");
@@ -39,11 +42,11 @@ namespace FinanceControl.Infrastructure.Migrations
                     b.Property<string>("Type")
                         .IsRequired()
                         .HasMaxLength(1)
-                        .HasColumnType("nvarchar");
+                        .HasColumnType("varchar(1)");
 
                     b.Property<decimal>("Value")
                         .HasPrecision(15, 2)
-                        .HasColumnType("decimal");
+                        .HasColumnType("decimal(15,2)");
 
                     b.HasKey("ID");
 
@@ -59,17 +62,17 @@ namespace FinanceControl.Infrastructure.Migrations
                     b.Property<string>("IsActive")
                         .IsRequired()
                         .HasMaxLength(1)
-                        .HasColumnType("nvarchar");
+                        .HasColumnType("varchar(1)");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("PasswordEncrypted")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<DateTime>("RegistrationDate")
                         .HasColumnType("timestamp");
@@ -77,7 +80,7 @@ namespace FinanceControl.Infrastructure.Migrations
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasMaxLength(20)
-                        .HasColumnType("nvarchar");
+                        .HasColumnType("varchar(20)");
 
                     b.HasKey("IdUser");
 
@@ -100,8 +103,8 @@ namespace FinanceControl.Infrastructure.Migrations
 
                     b.Property<string>("Token")
                         .IsRequired()
-                        .HasMaxLength(300)
-                        .HasColumnType("nvarchar");
+                        .HasMaxLength(36)
+                        .HasColumnType("varchar(36)");
 
                     b.HasKey("IdUser");
 
